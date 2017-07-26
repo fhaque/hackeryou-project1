@@ -1,0 +1,30 @@
+/* Global **********************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+* {
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* Helper **********************************/
+.wrapper {
+	max-width: 1080px;
+}
+
+/* Header **********************************/
+header h1 {
+	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 86px;
+	text-align: left;
+}

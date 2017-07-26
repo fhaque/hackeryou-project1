@@ -1,2 +1,7 @@
-NOTES.txt
+TODO
+-consider line-height for text and make sure it is correct.
+
+-------------------
+Questions
+
 
