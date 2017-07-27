@@ -3,5 +3,5 @@ TODO
 
 -------------------
 Questions
-
+-My header hero blocks and title are below center for some reason.
 
