@@ -44,6 +44,24 @@ section .section_highlight {
 	background-color: #f3f3f3;
 }
 
+p {
+	margin-bottom: 30px;
+
+	font-family: 'DroidSerif', serif;
+	color:  #afafaf;
+	font-size: 0.466rem;
+	font-weight: 400;
+	line-height: 1.714;
+	text-align: center;
+}
+
+a {
+	color:  #1e1e1e;
+	font-size: 0.466rem;
+	font-weight: 400;
+	text-decoration: none;
+}
+
 /* Helper **********************************/
 .wrapper {
 	clear: both;
@@ -221,3 +239,94 @@ footer li {
 /*
 /*
 /***************************************************/
+
+/* Intro Section **********************************/
+.img_over_block_graphic {
+	margin: 50px;
+}
+
+.img_over_block_graphic img{
+	width: 12.33rem;
+}
+
+/* Progress Section **********************************/
+.progress_figures {
+	padding: 0;
+	margin: 0;
+
+	list-style-type: none;
+}
+
+.progress_figures li {
+	float: left;
+	width: 25%;
+
+	padding: 0 15px;
+}
+
+.progress_figure h3 {
+	margin: 0;
+	margin-bottom: 30px;
+
+	font-size: 0.8rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.progress_graphic {
+	position: relative;
+
+	width: 74.1%;
+	margin: 0 auto;
+}
+
+.progress_graphic img {
+	width: 100%;
+}
+
+.progress_graphic p {
+	position: absolute;
+	top: 91.2%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	margin: 0;
+	padding: 0;
+
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.8rem;/* Approximation due to font substitution */
+	font-weight: 700;
+	color:  #1e1e1e;
+	text-align: center;
+}
+
+.stars {
+	width: 46.2%;
+	padding: 0;
+	margin: 0 auto;
+
+	list-style-type: none;
+
+	border: 1px solid red;
+}
+
+.stars li {
+	float: left;
+
+	width: 20%
+	padding: 0;
+	margin: 0;
+
+	border: 1px solid red;
+}
+
+.progress_figure .subtitle {
+	padding: 0;
+	margin: 0 auto;
+
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.0.466rem;
+	font-weight: 400;
+	color:  #1e1e1e;
+	text-align: center;
+}
