@@ -5,4 +5,5 @@ TODO
 Questions
 -My header hero blocks and title are below center for some reason.
 -My footer <ul> can't get rid of bulk/padding spacing.
+-Why doesn't section_highlight work?
 
