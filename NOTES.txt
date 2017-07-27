@@ -1,9 +1,12 @@
 TODO
+-change any h tag that has margin 0, padding 0 to inline-block instead.
 -consider line-height for text and make sure it is correct.
 -look at letter spacing
 -scale hero block arrows in the X direction using span.
+-replace Navigation bullets with psuedo:after - https://developer.mozilla.org/en/docs/Web/CSS/::after
 -------------------
 Questions
 -My footer <ul> can't get rid of bulk/padding spacing.
 -Why doesn't section_highlight work?
+-Using pixel value for height of header?
 
