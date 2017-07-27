@@ -1,9 +1,9 @@
 TODO
 -consider line-height for text and make sure it is correct.
 -look at letter spacing
+-scale hero block arrows in the X direction using span.
 -------------------
 Questions
--My header hero blocks and title are below center for some reason.
 -My footer <ul> can't get rid of bulk/padding spacing.
 -Why doesn't section_highlight work?
 
