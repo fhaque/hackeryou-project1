@@ -4,10 +4,12 @@ TODO
 -look at letter spacing
 -scale hero block arrows in the X direction using span.
 -replace Navigation bullets with psuedo:after - https://developer.mozilla.org/en/docs/Web/CSS/::after
+-color of input border?
 -------------------
 Questions
--My h tags show no padding, margin, and content shows small gap in top and bottom. Why?
+-My h tags show no padding, margin, and content shows small gap in top and bottom. Why? Same happens for contact number
 -Intro Section "Know Us" anchor has an unknown gap with the p above.
+-Form way off!!! Styling? Alignment?
 
 
 -My footer <ul> can't get rid of bulk/padding spacing.
