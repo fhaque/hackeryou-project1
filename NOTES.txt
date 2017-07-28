@@ -6,7 +6,15 @@ TODO
 -replace Navigation bullets with psuedo:after - https://developer.mozilla.org/en/docs/Web/CSS/::after
 -------------------
 Questions
+-My h tags show no padding, margin, and content shows small gap in top and bottom. Why?
+-Intro Section "Know Us" anchor has an unknown gap with the p above.
+
+
 -My footer <ul> can't get rid of bulk/padding spacing.
--Why doesn't section_highlight work?
 -Using pixel value for height of header?
 
+-Instead of creating a class on section for each section, can I just tagged what special case I may need. For example, section_heading_home_intro class over the section_heading class.
+-How to use Dev Tools, etc. to simplify and clean CSS (remove unnecessary/redundant rules and compress/generalize others)
+-semantic question: Should "object" be a direct child of "objects" or can "objects" be a list and with the items INSIDE the list items be "object"?
+-In "header h2" how to get to new line? Can I use br tag?
+-Had to create achievements collection to contain achievements for positioning purposes.

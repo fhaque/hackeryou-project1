@@ -2,18 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,400i');
 
-* {
-	box-sizing: border-box;
-}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { box-sizing: border-box; }
 
 html {
 	font-size: 30px;
@@ -42,6 +36,10 @@ section .section_highlight {
 	background-color: #f3f3f3;
 }
 
+.section_heading {
+	margin-bottom: 100px;
+}
+
 .section_heading h2 {
 	margin: 0 auto;
 	margin-bottom: 20px;
@@ -53,6 +51,7 @@ section .section_highlight {
 	margin: 0;
 
 	font-family: 'DroidSerif', serif;
+	color:  #1e1e1e;
 	font-size: 0.466rem;
 	font-style: italic;
 	text-align: center;
@@ -258,6 +257,14 @@ footer li {
 /***************************************************/
 
 /* Intro Section **********************************/
+.home_intro .section_heading {
+	margin-bottom: 50px;
+}
+
+.section_heading_home_intro h2 {
+	margin-bottom: 0px;
+}
+
 .img_over_block_graphic {
 	margin: 50px;
 }
@@ -267,6 +274,10 @@ footer li {
 }
 
 /* Progress Section **********************************/
+.home_progress {
+	background-color: #f3f3f3;
+}
+
 .progress_figures {
 	padding: 0;
 	margin: 0;
@@ -279,6 +290,13 @@ footer li {
 	width: 25%;
 
 	padding: 0 15px;
+}
+
+.progress_figure {
+	padding-top: 40px;
+	padding-bottom: 74px;
+
+	background-color: white;
 }
 
 .progress_figure h3 {
@@ -351,13 +369,24 @@ footer li {
 
 	padding: 0;
 	margin: 0;
+
 }
 
 .descriptions li {
 	float: left;
-	
+
+	margin-bottom: 80px;
+}
+
+.descriptions li:last-child {
+	margin-bottom: 0px;
+}
+
+.description {
+	float: left;
 	width: 50%;
-	padding: 40px 15px;
+
+	margin: 0;
 }
 
 .description img {
@@ -379,11 +408,14 @@ footer li {
 .description_text h3 {
 	width: 52%;
 	margin: 0;
-	padding: 0;
+	margin-bottom: 52px;
 
-	font-size: 0.8rem;/* Approximation due to font substitution */
+	/*margin: 0;
+	padding: 0;*/
+
+	font-size: 0.8rem;
 	font-weight: 700;
-	line-height: 1.25;/* Approximation due to font substitution */
+	line-height: 1.25;
 }
 
 .description_text p {
@@ -397,3 +429,66 @@ footer li {
 	margin: 0;
 	padding: 0;
 }
+
+/* Facts Section **********************************/
+.home_facts {
+	background-image: url("../images/home/facts-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-color: #ededed;
+
+	text-align: left;
+}
+
+.home_facts .section_heading_caption {
+	text-align: left;
+}
+
+.achievements_collection {
+	width: 46%;
+}
+
+.achievements {
+	padding: 0;
+	margin: 0;
+
+	list-style-type: none;
+}
+
+.achievements:first-child {
+	margin-bottom: 50px;
+}
+
+.achievements li {
+	float: left;
+
+	width: 33.3%;
+	padding: 0;
+	padding-right: 18px;
+}
+
+.achievement p {
+	margin: 0;
+
+	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;
+	text-align: left;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.achievement_number {
+	padding-bottom: 14px;
+
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.achievement_type {
+	font-size: 0.466rem;
+	font-weight: 400;
+}
+
+/* Contact Section **********************************/
+
+
