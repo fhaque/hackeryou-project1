@@ -7,13 +7,12 @@ TODO
 -color of input border?
 -------------------
 Questions
--My h tags show no padding, margin, and content shows small gap in top and bottom. Why? Same happens for contact number
 -Intro Section "Know Us" anchor has an unknown gap with the p above.
 -Form way off!!! Styling? Alignment?
-
+-Using pixel value for height of header and Blog Post Hero?
 
 -My footer <ul> can't get rid of bulk/padding spacing.
--Using pixel value for height of header?
+
 
 -Instead of creating a class on section for each section, can I just tagged what special case I may need. For example, section_heading_home_intro class over the section_heading class.
 -How to use Dev Tools, etc. to simplify and clean CSS (remove unnecessary/redundant rules and compress/generalize others)
