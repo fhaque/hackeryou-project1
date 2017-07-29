@@ -1,4 +1,6 @@
 /* Global **********************************/
+
+/* setup *****************************/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,400i');
 
@@ -13,31 +15,19 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 * { box-sizing: border-box; }
 
+/* html/body *****************************/
 html {
 	font-size: 30px;
 	font-family: "Montserrat", sans-serif;
 	color:  #1e1e1e;
 }
 
-h1, h2, h3 {
-/*	font-family: "Montserrat", sans-serif;
-	color:  #1e1e1e;*/
-	text-transform: uppercase;
-}
-
-h1 {
-	font-size: 1rem;
-}
-
+/* section *****************************/
 section {
 	text-align: center;
 	padding: 140px 0px;
 
 	background-color: white;
-}
-
-section .section_highlight {
-	background-color: #f3f3f3;
 }
 
 .section_heading {
@@ -63,6 +53,22 @@ section .section_highlight {
 	line-height: 1;
 }
 
+.section_hero {
+	min-height: 800px; /*TODO: min or max or fixed? */
+	background-color: #ededed;
+}
+
+/* general text selectors *****************************/
+h1, h2, h3 {
+/*	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;*/
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 1rem;
+}
+
 p {
 	margin-bottom: 30px;
 
@@ -74,6 +80,7 @@ p {
 	text-align: center;
 }
 
+/* links selectors *****************************/
 a {
 	color:  #1e1e1e;
 	font-size: 0.466rem;
@@ -682,19 +689,80 @@ input[name="message"] {
 
 /* Work Header **********************************/
 .work_header_hero {
-	min-height: 400px;
+	min-height: 0;
 }
 
-.work_header_hero h2 {
+/*.work_header_hero h2 {
 	top: 60%;
 
 	color: #1e1e1e;
 	font-size: 1.2rem;
 }
+*/
 
 /* Work Section **********************************/
+.work_main {
+	padding-top: 180px;
+}
+
+.work_main .section_heading {
+	margin-bottom: 50px;
+}
+
+.work_main .section_heading h2 {
+	margin-bottom: 30px;
+}
+
 
 /* Work Article ******************/
+.work_article {
+	padding-bottom: 140px; 
+
+	text-align: left;
+}
+
+.work_article h2 {
+	font-size: 0.8rem;
+}
+
+.work_article h3 {
+	font-size: 0.466rem;
+}
+
+.work_article p {
+	text-align: left;
+}
+
+.work_article img {
+	width: 100%;
+}
+
+.work_article_content {
+	padding-top: 90px;
+}
+
+.work_article article {
+	float: left;
+
+	width: 66%;
+	margin-right: 130px;
+}
 
 
 /* Work Aside ******************/
+.work_article aside {
+	float: left;
+
+	width: calc(34% - 130px);
+}
+
+.aside_section ol {
+	margin: 0;
+	padding: 0;
+}
+
+.aside_section ol li {
+	font-family: 'DroidSerif', serif;
+	font-size: 0.466rem;
+	color:  #afafaf;
+}
