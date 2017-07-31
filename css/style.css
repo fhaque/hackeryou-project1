@@ -216,11 +216,13 @@ header h2 {
 }
 
 .prev_header_hero_block {
-	float: left;	
+	float: left;
+	text-align: right;	
 }
 
 .next_header_hero_block {
 	float: right;
+	text-align: left;
 }
 
 /* Header Navigation ****/
