@@ -38,10 +38,13 @@ section {
 	margin: 0 auto;
 	margin-bottom: 20px;
 
+	font-size: 
 	line-height: 1;
 }
 
 .section_heading_caption {
+	position: relative;
+
 	margin: 0;
 
 	font-family: 'DroidSerif', serif;
@@ -51,6 +54,20 @@ section {
 	text-align: center;
 	text-transform: capitalize;
 	line-height: 1;
+}
+
+.section_heading_caption::after {
+	display: inline-block;
+	position: absolute;
+	top: calc(100% + 24px);
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	width: 50px;
+	min-height: 4px;
+
+	content: "";
+	background-color: #1e1e1e;
 }
 
 .section_hero {
@@ -91,6 +108,12 @@ a {
 
 .more_info_link {
 	display: block;
+}
+
+.more_info_link::after {
+	padding-left: 13px;
+
+	content: "-"; /*TODO: apply &#9654 */
 }
 
 button a {
@@ -283,7 +306,7 @@ footer ul {
 footer li {
 	display: inline;
 
-	padding: 0 50px;
+	padding: 0 25px;
 	margin: 0;
 
 	font-size: 0.466rem;
@@ -303,7 +326,7 @@ footer li::before {
 	position: relative;
 
 	content: "-";
-	left: -50px;
+	left: -25px;
 }
 
 footer li:first-child::before {
@@ -383,6 +406,11 @@ footer li:first-child::before {
 
 	width: 74.1%;
 	margin: 0 auto;
+}
+
+.progress_image_wrapper {
+	/*min-width: 210px;*/
+	min-height: 180px;
 }
 
 .progress_graphic img {
@@ -635,6 +663,8 @@ input[name="message"] {
 }
 
 .blog_header_hero h2 {
+	width: 85.5%;
+
 	color: white;
 }
 
@@ -661,8 +691,10 @@ input[name="message"] {
 }
 
 .blog_post_subheading p {
+	position: relative;
+
 	padding: 0;
-	padding-left: 26px;
+	/*padding-left: 26px;*/
 	margin: 0;
 
 	font-family: 'DroidSerif', serif;
@@ -677,10 +709,31 @@ input[name="message"] {
 	width: 50%;
 }
 
+.blog_post_date::before {
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	transform: translateY(12.5%); /*TODO: seems like magic number!*/
+	padding-right: 12px;
+
+	content: url("../images/blog/icon-clock.png");
+}
+
 .blog_post_comment_count {
 	float: right;
 	
 	width: 50%;
+}
+
+.blog_post_comment_count::before {
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	transform: translateY(12.5%); /*TODO: seems like magic number!*/
+
+	padding-right: 12px;
+
+	content: url("../images/blog/icon-comments.png");
 }
 
 .blog_post_hero {
@@ -710,6 +763,7 @@ input[name="message"] {
 
 .blog_blockquote_content {
 	margin: 20px;
+	padding: 40px;
 
 	background: url("../images/blog/blockquote-bg.png");
     background-size: contain;
@@ -718,11 +772,23 @@ input[name="message"] {
 
 .blog_blockquote_quote {
 	padding: 0;
+	margin: 30px 0;
+}
+
+/*.blog_blockquote_quote::before {
+	display: block;
+	
+	margin-bottom: 30px;
+
+	content: url("../images/blog/icon-quote.png");
+}*/
+
+.blog_blockquote_author {
 	margin: 0;
 }
 
-.blogs button {
-	padding: 64px 20px;
+.blog_main_section .button {
+	padding: 20px 64px;
 	margin: 0 auto;
 }
 
@@ -759,7 +825,9 @@ input[name="message"] {
 .work_main .section_heading h2 {
 	margin-bottom: 30px;
 }
-
+.work_main .section_heading_caption::after {
+	display: none;
+}
 
 /* Work Article ******************/
 .work_article {

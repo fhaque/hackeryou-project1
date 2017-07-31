@@ -1,4 +1,6 @@
 TODO
+-check if font-size specified for h2 for blog and all other pages.
+-work on Blockquote styling
 -change any h tag that has margin 0, padding 0 to inline-block instead.
 -consider line-height for text and make sure it is correct.
 -look at letter spacing
