@@ -82,10 +82,16 @@ section {
 	background-color: #ededed;
 }
 
+/* list selectors *****************************/
+ul, ol {
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+}
+
 /* general text selectors *****************************/
 h1, h2, h3 {
-/*	font-family: "Montserrat", sans-serif;
-	color:  #1e1e1e;*/
 	text-transform: uppercase;
 }
 
@@ -104,7 +110,6 @@ p {
 	font-size: 0.466rem;
 	font-weight: 400;
 	line-height: 1.714;
-	text-align: center;
 	text-rendering: auto;
 }
 
@@ -287,22 +292,12 @@ header h2 {
 	transform: translateY(50%);
 }
 
-.header_nav_container nav ul {
-	padding: 0px;
-	margin: 0px;
-
-	list-style-type: none;
-}
-
 .header_nav_container nav li {
 	float: left;
 
 	padding: 0px 24px;
 
 	font-size: 0.466rem;
-	font-weight: 600;
-	/*font-family: "Montserrat", sans-serif;*/
-	text-transform: uppercase;
 }
 
 .header_nav_container nav li::before {
@@ -342,11 +337,7 @@ footer h1 {
 }
 
 footer ul {
-	list-style-type: none;
-
-	/*width: 55%;*/
 	margin: 20px auto;
-	padding: 0;
 
 	font-size: 0;
 	text-align: center;
@@ -452,13 +443,6 @@ footer li a {
 	background-color: #f3f3f3;
 }
 
-.progress_figures {
-	padding: 0;
-	margin: 0;
-
-	list-style-type: none;
-}
-
 .progress_figures li {
 	float: left;
 	width: 25%;
@@ -517,11 +501,8 @@ footer li a {
 
 .stars {
 	width: 46.2%;
-	padding: 0;
 	margin: 0 auto;
 	margin-bottom: 20px;
-
-	list-style-type: none;
 }
 
 .stars li {
@@ -567,14 +548,6 @@ footer li a {
 }
 
 /* Offer Section **********************************/
-.descriptions {
-	list-style-type: none;
-
-	padding: 0;
-	margin: 0;
-
-}
-
 .descriptions li {
 	float: left;
 
@@ -671,13 +644,6 @@ footer li a {
 
 .achievements_collection {
 	width: 46%;
-}
-
-.achievements {
-	padding: 0;
-	margin: 0;
-
-	list-style-type: none;
 }
 
 .achievements:first-child {
@@ -1115,11 +1081,8 @@ footer li a {
 }
 
 .aside_section ol {
-	margin: 0;
-	padding: 0;
-
 	list-style-position: inside;
-	list-style-type: none;
+
 	counter-reset: li;
 }
 
@@ -1140,13 +1103,6 @@ footer li a {
 	content: counter(li) ". ";
 	color: #1e1e1e;
 	font-weight: 700;
-}
-
-.social_media_icon_list {
-	margin: 0;
-	padding: 0;
-
-	list-style-type: none;
 }
 
 .social_media_icon_list li {
