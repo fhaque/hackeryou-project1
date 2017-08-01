@@ -222,18 +222,25 @@ header h2 {
 }
 
 .header_hero_block {
-	min-width: 8.33%;
+	min-width: 160px;
 	padding: 23px;
 
 	background-color: #1e1e1e;
 
-	/*font-family: 'Montserrat', sans-serif;*/
 	color:  #ffffff;
 	font-size: 0.466rem;
 	font-weight: 400;
 	text-transform: uppercase;
+}
 
-	/*text-align: center;*/
+.prev_header_hero_block {
+	float: left;
+	text-align: left;	
+}
+
+.next_header_hero_block {
+	float: right;
+	text-align: right;
 }
 
 .prev_header_hero_block span::before {
@@ -257,20 +264,11 @@ header h2 {
 	margin: 0px auto;
 }
 
-.prev_header_hero_block {
-	float: left;
-	text-align: right;	
-}
-
-.next_header_hero_block {
-	float: right;
-	text-align: left;
-}
-
 /* Header Navigation ****/
 
 .header_nav_container {
 	position: relative;
+	padding-top: 40px;
 }
 
 .header_nav_container h1 {
@@ -421,11 +419,31 @@ footer li a {
 }
 
 .img_over_block_graphic {
-	margin: 50px;
+	position: relative;
+
+	margin: 80px 0;
 }
 
-.img_over_block_graphic img{
+.img_over_block_graphic img {
+	position: relative;
 	width: 12.33rem;
+
+	z-index: 20;
+}
+
+.img_over_block_graphic::after {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 10.33rem;
+	min-height: calc(100% + 60px);
+	z-index: 10;
+
+	content: "";
+	background-color:  #92fcf9;
+
 }
 
 /* Progress Section **********************************/
@@ -723,6 +741,10 @@ footer li a {
 	text-align: left;
 }
 
+.contact_form_input_containers {
+
+}
+
 .contact_form .form_input_container {
 	float: left;
 	position: relative;
@@ -741,8 +763,12 @@ footer li a {
 	min-height: 3px;
 
 	content: "";
-	background-color: black;
+	background-color: #f3f3f3;
+
+	/* Fix invisibility issues of clearfix */
+	visibility: initial;
 }
+
 
 
 .form_input_container.form_input_container_full_width {
@@ -754,13 +780,13 @@ footer li a {
 	display: inline-block;
 	
 	padding-right: 10px;
+	margin-bottom: 16px;
 	width: 18%;
 
 	font-family: "Montserrat", sans-serif;
 	color:  #1e1e1e;
 	font-size: 0.466rem;
 	font-weight: 400;
-	line-height: 6.14;
 	text-align: left;
 }
 
@@ -787,15 +813,6 @@ footer li a {
 	width: calc(94% - 30px);
 }
 
-/*.form_input_container input::placeholder {
-	font-family: "Montserrat", sans-serif;
-	color:  #1e1e1e;
-	font-size: 0.466rem;
-	font-weight: 400;
-	line-height: 6.14;
-	text-align: left;
-}*/
-
 .button_wrapper {
 	text-align: center;
 }
@@ -804,7 +821,7 @@ footer li a {
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
-	
+
 	max-width: 230px;
 	padding: 20px 84px;
 	margin: 0 auto;
