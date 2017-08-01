@@ -1,6 +1,11 @@
 /* Global **********************************/
+/*                                         */
+/*                 GLOBAL                  */
+/*                                         */
+/*******************************************/
 
-/* setup *****************************/
+
+/* Setup **********************************/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700');
 
@@ -15,7 +20,12 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 * { box-sizing: border-box; }
 
-/* html/body *****************************/
+/*******************************************/
+
+/* SELECTORS *******************************/
+
+
+/* html/body selectors *********************/
 html {
 	font-size: 30px;
 	font-family: "Montserrat", sans-serif;
@@ -23,7 +33,12 @@ html {
 	text-rendering: geometricPrecision;
 }
 
-/* section *****************************/
+body {
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* section selectors **********************/
 section {
 	text-align: center;
 	padding: 140px 0px;
@@ -54,9 +69,7 @@ section {
 
 	margin: 0;
 
-	font-family: 'DroidSerif', serif;
 	color:  #1e1e1e;
-	font-size: 0.466rem;
 	font-style: italic;
 	text-align: center;
 	text-transform: capitalize;
@@ -78,11 +91,11 @@ section {
 }
 
 .section_hero {
-	min-height: 800px; /*TODO: min or max or fixed? */
+	min-height: 800px;
 	background-color: #ededed;
 }
 
-/* list selectors *****************************/
+/* list selectors *************************/
 ul, ol {
 	margin: 0;
 	padding: 0;
@@ -90,7 +103,7 @@ ul, ol {
 	list-style-type: none;
 }
 
-/* general text selectors *****************************/
+/* general text selectors *****************/
 h1, h2, h3 {
 	text-transform: uppercase;
 }
@@ -123,7 +136,7 @@ p em {
 	font-style: italic;
 }
 
-/* links selectors *****************************/
+/* links selectors ************************/
 a {
 	color:  #1e1e1e;
 	font-size: 0.466rem;
@@ -146,6 +159,18 @@ a {
 	font-size: 0.388rem;
 }
 
+/* Helper selectors ***********************/
+.wrapper {
+	clear: both;
+	max-width: 1170px;
+
+	margin: 0 auto;
+}
+
+.button_wrapper {
+	text-align: center;
+}
+
 .button {
 	display: inline-block;
 	
@@ -160,21 +185,7 @@ a {
 	border: none;
 }
 
-/* Helper **********************************/
-.wrapper {
-	clear: both;
-	max-width: 1170px;
-
-	margin: 0 auto;
-}
-
-/* Body **********************************/
-body {
-	margin: 0 auto;
-	padding: 0;
-}
-
-/* Header **********************************/
+/* <header> *******************************/
 header {
 	position: relative;
 
@@ -200,7 +211,7 @@ header h2 {
 
 /* Header Hero ****/
 .home_header_hero {
-	position: relative; /*TODO: Remove */
+	position: relative;
 
 	background-image: url("../images/home/hero.jpg");
 	background-size: cover;
@@ -297,10 +308,6 @@ header h2 {
 	font-weight: 600;
 }
 
-.header_nav_container nav a {
-	font-weight: 600;
-}
-
 .header_nav_container nav li:first-child::before {
 	content: "";
 }
@@ -309,7 +316,13 @@ header h2 {
 	padding-right: 0px;
 }
 
-/* Footer **********************************/
+.header_nav_container nav a {
+	font-weight: 600;
+}
+
+/******************************************/
+
+/* <footer> *******************************/
 footer {
 	padding: 50px 0;
 
@@ -373,22 +386,22 @@ footer li a {
 
 .copyright {
 	clear: both;
+
 	margin: 0;
 
-	font-family: 'DroidSerif', serif;
 	color:  #1e1e1e;
-	font-size: 0.466rem;
 	font-style: italic;
 }
 
-/* INDEX CONTENT **********************************/
-/*
-/*
-/*
-/*
-/***************************************************/
+/******************************************/
 
-/* Intro Section **********************************/
+/* Index ***********************************/
+/*                                         */
+/*                 INDEX                   */
+/*                                         */
+/*******************************************/
+
+/* Intro <section> *************************/
 .home_intro .section_heading {
 	margin-bottom: 50px;
 }
@@ -405,9 +418,9 @@ footer li a {
 
 .img_over_block_graphic img {
 	position: relative;
-	width: 12.33rem;
-
 	z-index: 20;
+
+	width: 12.33rem;
 }
 
 .img_over_block_graphic::after {
@@ -416,16 +429,17 @@ footer li a {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	z-index: 10;
+
 	width: 10.33rem;
 	min-height: calc(100% + 60px);
-	z-index: 10;
 
 	content: "";
 	background-color:  #92fcf9;
-
 }
+/******************************************/
 
-/* Progress Section **********************************/
+/* Progress <section> *********************/
 .home_progress {
 	padding: 100px 0;
 	background-color: #f3f3f3;
@@ -462,55 +476,6 @@ footer li a {
 	line-height: 1;
 }
 
-.progress_graphic {
-	position: relative;
-
-	width: 74.1%;
-	margin: 0 auto;
-}
-
-.progress_image_wrapper {
-	min-height: 180px;
-}
-
-.progress_graphic img {
-	width: 100%;
-}
-
-.progress_graphic p {
-	position: absolute;
-	top: calc(91.2% - 10px);
-	left: 50%;
-	transform: translate(-50%,-50%);
-
-	margin: 0;
-	padding: 0;
-
-	font-size: 0.8rem;/* Approximation due to font substitution */
-	font-weight: 700;
-	text-align: center;
-}
-
-.stars {
-	width: 46.2%;
-	margin: 0 auto;
-	margin-bottom: 20px;
-}
-
-.stars li {
-	float: left;
-
-	width: 20%;
-	padding: 0;
-	margin: 0;
-
-	font-family: FontAwesome;
-	color: #92fcf9;
-	font-size: 0.6rem;
-	font-weight: 400;
-	text-align: center;
-}
-
 .progress_figure .subtitle {
 	position: relative;
 
@@ -537,7 +502,58 @@ footer li a {
 	background-color:  #1e1e1e;
 }
 
-/* Offer Section **********************************/
+.progress_graphic {
+	position: relative;
+
+	width: 74.1%;
+	margin: 0 auto;
+}
+
+.progress_image_wrapper {
+	min-height: 180px;
+}
+
+.progress_graphic img {
+	width: 100%;
+}
+
+.progress_graphic p {
+	position: absolute;
+	top: calc(91.2% - 10px);
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	margin: 0;
+	padding: 0;
+
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.stars {
+	width: 46.2%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.stars li {
+	float: left;
+
+	width: 20%;
+	padding: 0;
+	margin: 0;
+
+	font-family: FontAwesome;
+	color: #92fcf9;
+	font-size: 0.6rem;
+	font-weight: 400;
+	text-align: center;
+}
+
+/******************************************/
+
+/* Offer <section> ************************/
 .descriptions li {
 	float: left;
 
@@ -603,7 +619,6 @@ footer li a {
 .description_text p {
 	text-align: left;
 
-	/*margin: 0;*/
 	margin-top: 0;
 	padding: 0;
 }
@@ -613,7 +628,9 @@ footer li a {
 	padding: 0;
 }
 
-/* Facts Section **********************************/
+/******************************************/
+
+/* Facts <section> ************************/
 .home_facts {
 	background-image: url("../images/home/facts-bg.jpg");
 	background-size: cover;
@@ -670,7 +687,9 @@ footer li a {
 	font-weight: 600;
 }
 
-/* Contact Section **********************************/
+/******************************************/
+
+/* Contact <section> **********************/
 .home_contact p:not(.section_heading_caption),
 .home_contact input,
 .home_contact input:focus,
@@ -698,6 +717,7 @@ footer li a {
 	text-align: center;
 }
 
+/**** Contact Form ****/
 .contact_form {
 	text-align: left;
 }
@@ -761,10 +781,6 @@ footer li a {
 	width: 91%;
 }
 
-.button_wrapper {
-	text-align: center;
-}
-
 .contact_form button {
 	position: relative;
 	left: 50%;
@@ -776,14 +792,15 @@ footer li a {
 	margin-top: 50px;
 }
 
-/* BLOG CONTENT **********************************/
-/*
-/*
-/*
-/*
-/***************************************************/
+/******************************************/
 
-/* Blog Header **********************************/
+/* Blog ************************************/
+/*                                         */
+/*                 BLOG                    */
+/*                                         */
+/*******************************************/
+
+/* Blog <header> ***************************/
 .blog_header_hero {
 	min-height: 400px;
 
@@ -799,8 +816,15 @@ footer li a {
 	color: white;
 }
 
+/******************************************/
 
-/* Blog Main Section **********************************/
+/* Blog <main> ****************************/
+
+/* Blog Section ****************/
+.blog_main_section .button {
+	padding: 20px 64px;
+	margin: 0 auto;
+}
 
 /* Blog Post ****************/
 .blog {
@@ -826,10 +850,8 @@ footer li a {
 	position: relative;
 
 	padding: 0;
-	/*padding-left: 26px;*/
 	margin: 0;
 
-	font-family: 'DroidSerif', serif;
 	color:  #1e1e1e;
 	font-size: 0.4rem;
 	font-style: italic;
@@ -845,7 +867,7 @@ footer li a {
 	display: inline-block;
 	position: relative;
 	top: 50%;
-	transform: translateY(12.5%); /*TODO: seems like magic number!*/
+	transform: translateY(12.5%);
 	padding-right: 12px;
 
 	content: url("../images/blog/icon-clock.png");
@@ -861,7 +883,7 @@ footer li a {
 	display: inline-block;
 	position: relative;
 	top: 50%;
-	transform: translateY(12.5%); /*TODO: seems like magic number!*/
+	transform: translateY(12.5%);
 
 	padding-right: 12px;
 
@@ -889,6 +911,8 @@ footer li a {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/* Blog Post Blockquote *********/
 
 .blog_blockquote {
 	width: 82%;
@@ -925,15 +949,6 @@ footer li a {
 	font-style: normal;
 }
 
-
-/*.blog_blockquote_quote::before {
-	display: block;
-	
-	margin-bottom: 30px;
-
-	content: url("../images/blog/icon-quote.png");
-}*/
-
 .blog_blockquote_author {
 	margin: 0;
 
@@ -944,33 +959,20 @@ footer li a {
 	text-transform: uppercase;
 
 }
+/*******************************************/
 
-.blog_main_section .button {
-	padding: 20px 64px;
-	margin: 0 auto;
-}
+/* Work ************************************/
+/*                                         */
+/*                 WORK                    */
+/*                                         */
+/*******************************************/
 
-/* WORK CONTENT **********************************/
-/*
-/*
-/*
-/*
-/***************************************************/
-
-/* Work Header **********************************/
+/* Work <header> ***************************/
 .work_header_hero {
 	min-height: 0;
 }
 
-/*.work_header_hero h2 {
-	top: 60%;
-
-	color: #1e1e1e;
-	font-size: 1.2rem;
-}
-*/
-
-/* Work Section **********************************/
+/* Work <section> **************************/
 .work_main {
 	padding-top: 180px;
 	padding-bottom: 0px;
@@ -987,7 +989,7 @@ footer li a {
 	display: none;
 }
 
-/* Work Article ******************/
+/* Work Article <main> **********/
 .work_article {
 	padding-bottom: 140px; 
 
@@ -1039,8 +1041,7 @@ footer li a {
 	margin-right: 130px;
 }
 
-
-/* Work Aside ******************/
+/* Work <aside> ******************/
 .work_article aside {
 	float: left;
 
@@ -1098,7 +1099,7 @@ footer li a {
 	margin: 0 auto;
 }
 
-/* Work Section Navigation ******************/
+/* Work Section <nav> ******************/
 .work_main nav {
 	position: relative;
 
@@ -1162,4 +1163,3 @@ footer li a {
 	content: "▶";
 	font-size: 0.388rem;
 }
-
