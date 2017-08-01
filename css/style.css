@@ -102,9 +102,19 @@ p {
 	font-family: 'DroidSerif', serif;
 	color:  #afafaf;
 	font-size: 0.466rem;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1.714;
 	text-align: center;
+	text-rendering: auto;
+}
+
+p strong {
+	color:  #1e1e1e;
+	font-weight: 700;
+}
+
+p em {
+	font-style: italic;
 }
 
 /* links selectors *****************************/
@@ -126,7 +136,7 @@ a {
 .more_info_link::after {
 	padding-left: 10px;
 
-	content: "▶"; /*TODO: apply &#9654 */
+	content: "▶";
 	font-size: 0.388rem;
 }
 
@@ -693,7 +703,8 @@ footer li a {
 	font-family: "Montserrat", sans-serif;
 	color:  #92fcf9;
 	font-size: 2.33rem;
-	font-weight: 700;
+	font-weight: 600;
+	letter-spacing: 8px;
 	text-align: center;
 }
 
@@ -712,39 +723,96 @@ footer li a {
 	text-align: left;
 }
 
-input,
-input:focus {
-	width: 32%;
-	padding: 0;
-	margin: 0;
+.contact_form .form_input_container {
+	float: left;
+	position: relative;
 
-	border-bottom: 1px solid #ededed;
-	box-shadow: none;
-	appearance: none;
+	width: 33.33%;
+	/*border-bottom: 1px solid #ededed;*/
 }
 
-input::placeholder {
+.contact_form .form_input_container::after {
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	width: calc(100% - 30px);
+	min-height: 3px;
+
+	content: "";
+	background-color: black;
+}
+
+
+.form_input_container.form_input_container_full_width {
+	width: 100%;
+}
+
+
+.form_input_container label {
+	display: inline-block;
+	
+	padding-right: 10px;
+	width: 18%;
+
 	font-family: "Montserrat", sans-serif;
 	color:  #1e1e1e;
 	font-size: 0.466rem;
 	font-weight: 400;
-	line-height: 6.14;/* Approximation due to font substitution */
+	line-height: 6.14;
 	text-align: left;
 }
+
+.form_input_container input,
+.form_input_container input:focus {
+	width: calc(82% - 30px);
+
+	padding: 0;
+	margin: 0;
+
+	border: none;
+	box-shadow: none;
+}
+
+.form_input_container input:focus {
+	background-color: #f3f3f3;
+}
+
+.form_input_container.form_input_container_full_width label {
+	width: 6%;
+}
+
+.form_input_container.form_input_container_full_width input {
+	width: calc(94% - 30px);
+}
+
+/*.form_input_container input::placeholder {
+	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;
+	font-size: 0.466rem;
+	font-weight: 400;
+	line-height: 6.14;
+	text-align: left;
+}*/
 
 .button_wrapper {
 	text-align: center;
 }
 
 .contact_form button {
-	width: 230px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	
+	max-width: 230px;
 	padding: 20px 84px;
 	margin: 0 auto;
 	margin-top: 50px;
-}
 
-input[name="message"] {
-	width: 100%;
+	/*background-color: black;
+	color: white;
+	border: 0;*/
 }
 
 /* BLOG CONTENT **********************************/
@@ -965,17 +1033,25 @@ input[name="message"] {
 	text-align: left;
 }
 
+.work_article .section_hero {
+	background-image: url("../images/work/project-hero.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+
 .work_article h2 {
 	font-size: 0.8rem;
 	font-weight: 600;
+	letter-spacing: 2px;
 }
 
 .work_article h3 {
 	margin: 0;
-	margin-bottom: 18px;
+	margin-bottom: 10px;
 
 	font-size: 0.466rem;
-	font-weight: 400;
+	font-weight: 600;
+	letter-spacing: 1px;
 }
 
 .work_article p {
@@ -1011,11 +1087,14 @@ input[name="message"] {
 }
 
 .aside_section {
-	margin-bottom: 40px;
+	margin-bottom: 36px;
+
+	font-size: 0;
 }
 
 .aside_section p {
 	margin: 0;
+	line-height: 1;
 }
 
 .aside_section ol {
@@ -1031,6 +1110,7 @@ input[name="message"] {
 .aside_section li::before {
 	font-family: 'DroidSerif', serif;
 	font-size: 0.466rem;
+	text-rendering: auto;
 }
 
 .aside_section li {
@@ -1042,6 +1122,7 @@ input[name="message"] {
 .aside_section ol li::before {
 	content: counter(li) ". ";
 	color: #1e1e1e;
+	font-weight: 700;
 }
 
 .social_media_icon_list {
@@ -1116,7 +1197,8 @@ input[name="message"] {
 .work_main .nav_previous::before {
 	padding-right: 13px;
 
-	content: "-";
+	content: "◀";
+	font-size: 0.388rem;
 }
 
 .work_main .nav_next {
@@ -1126,6 +1208,7 @@ input[name="message"] {
 .work_main .nav_next::after {
 	padding-left: 13px;
 
-	content: "-";
+	content: "▶";
+	font-size: 0.388rem;
 }
 
