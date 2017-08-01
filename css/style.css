@@ -100,6 +100,7 @@ h1 {
 
 	font-weight: 600;
 	letter-spacing: 6px;
+	line-height: 1;
 }
 
 p {
@@ -145,20 +146,9 @@ a {
 	font-size: 0.388rem;
 }
 
-button a {
-	padding: 20px;
-
-	font-family: "Montserrat", sans-serif;
-	color:  #ffffff;
-	font-size: 0.466rem;
-	font-weight: 400;
-	text-align: center;
-
-	background-color:  #1e1e1e;
-}
-
 .button {
 	display: inline-block;
+	
 	padding: 20px;
 
 	font-family: "Montserrat", sans-serif;
@@ -166,7 +156,6 @@ button a {
 	font-size: 0.466rem;
 	font-weight: 400;
 	text-align: center;
-
 	background-color:  #1e1e1e;
 	border: none;
 }
@@ -289,7 +278,6 @@ header h2 {
 
 	position: relative;
 	top: 50%;
-	transform: translateY(50%);
 }
 
 .header_nav_container nav li {
@@ -457,6 +445,13 @@ footer li a {
 	background-color: white;
 }
 
+.progress_figure h3,
+.progress_figure p {
+	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;
+}
+
+
 .progress_figure h3 {
 	margin: 0;
 	margin-bottom: 30px;
@@ -475,7 +470,6 @@ footer li a {
 }
 
 .progress_image_wrapper {
-	/*min-width: 210px;*/
 	min-height: 180px;
 }
 
@@ -492,10 +486,8 @@ footer li a {
 	margin: 0;
 	padding: 0;
 
-	font-family: "Montserrat", sans-serif;
 	font-size: 0.8rem;/* Approximation due to font substitution */
 	font-weight: 700;
-	color:  #1e1e1e;
 	text-align: center;
 }
 
@@ -514,7 +506,7 @@ footer li a {
 
 	font-family: FontAwesome;
 	color: #92fcf9;
-	font-size: 0.6rem;/* Approximation due to font substitution */
+	font-size: 0.6rem;
 	font-weight: 400;
 	text-align: center;
 }
@@ -525,11 +517,9 @@ footer li a {
 	padding: 0;
 	margin: 0 auto;
 
-	font-family: "Montserrat", sans-serif;
 	font-size: 0.466rem;
 	font-weight: 600;
 	letter-spacing: 2px;
-	color:  #1e1e1e;
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -681,10 +671,17 @@ footer li a {
 }
 
 /* Contact Section **********************************/
-.contact_number {
+.home_contact p:not(.section_heading_caption),
+.home_contact input,
+.home_contact input:focus,
+.home_contact label{
+	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;
+}
+
+.home_contact p.contact_number {
 	margin: 0;
 
-	font-family: "Montserrat", sans-serif;
 	color:  #92fcf9;
 	font-size: 2.33rem;
 	font-weight: 600;
@@ -695,8 +692,6 @@ footer li a {
 .addresses {
 	margin: 0;
 
-	font-family: "Montserrat", sans-serif;
-	color:  #1e1e1e;
 	font-size: 0.466rem;
 	font-weight: 400;
 	line-height: 1.71;
@@ -707,35 +702,20 @@ footer li a {
 	text-align: left;
 }
 
-.contact_form_input_containers {
-
-}
-
 .contact_form .form_input_container {
 	float: left;
 	position: relative;
 
+	width: calc(33.33% - 30px);
+	margin-right: 30px;
+
+	border-bottom: 1px solid #ededed;
+}
+
+.contact_form .form_input_container.at_right_side {
 	width: 33.33%;
-	/*border-bottom: 1px solid #ededed;*/
+	margin-right: 0;
 }
-
-.contact_form .form_input_container::after {
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-
-	width: calc(100% - 30px);
-	min-height: 3px;
-
-	content: "";
-	background-color: #f3f3f3;
-
-	/* Fix invisibility issues of clearfix */
-	visibility: initial;
-}
-
-
 
 .form_input_container.form_input_container_full_width {
 	width: 100%;
@@ -749,8 +729,6 @@ footer li a {
 	margin-bottom: 16px;
 	width: 18%;
 
-	font-family: "Montserrat", sans-serif;
-	color:  #1e1e1e;
 	font-size: 0.466rem;
 	font-weight: 400;
 	text-align: left;
@@ -758,10 +736,14 @@ footer li a {
 
 .form_input_container input,
 .form_input_container input:focus {
-	width: calc(82% - 30px);
+	width: 79%;
 
 	padding: 0;
 	margin: 0;
+
+	font-size: 0.6rem;
+	font-weight: 400;
+	text-align: left;
 
 	border: none;
 	box-shadow: none;
@@ -776,7 +758,7 @@ footer li a {
 }
 
 .form_input_container.form_input_container_full_width input {
-	width: calc(94% - 30px);
+	width: 91%;
 }
 
 .button_wrapper {
@@ -792,10 +774,6 @@ footer li a {
 	padding: 20px 84px;
 	margin: 0 auto;
 	margin-top: 50px;
-
-	/*background-color: black;
-	color: white;
-	border: 0;*/
 }
 
 /* BLOG CONTENT **********************************/
