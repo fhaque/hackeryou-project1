@@ -1,4 +1,5 @@
 TODO
+-do the form
 -add padding to the anchors for navigation rather than the list item.
 -check if font-size specified for h2 for blog and all other pages.
 -work on Blockquote styling
