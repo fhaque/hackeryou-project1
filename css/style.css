@@ -758,6 +758,9 @@ input[name="message"] {
 .blog_header_hero {
 	min-height: 400px;
 
+	background-image: url("../images/blog/blog-header-bg.png");
+	background-size: cover;
+	background-position: center center;
 	background-color:  #92fcf9;
 }
 
@@ -780,6 +783,7 @@ input[name="message"] {
 	margin-bottom: 20px;
 
 	font-size: 0.8rem;
+	letter-spacing: 3px;
 }
 
 .blog_post_subheading {
@@ -838,11 +842,16 @@ input[name="message"] {
 .blog_post_hero {
 	clear: both;
 	
-	width: 82%;
-	height: 360px; /*TODO: Is this okay? */
+	width: 82.9%;
+	min-width: 970px;
+	max-height: 360px; 
 	margin: 0 auto;
 
 	background-color: #ededed;
+}
+
+.blog_post_hero img {
+	width: 100%
 }
 
 .blog_post_description {
@@ -867,12 +876,26 @@ input[name="message"] {
 	background: url("../images/blog/blockquote-bg.png");
     background-size: contain;
     background-position: center;
+
+    font-size: 0;
 }
 
 .blog_blockquote_quote {
 	padding: 0;
 	margin: 30px 0;
+
+	color:  #1e1e1e;
+	font-size: 0.8rem;
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.5;
+	text-align: center;
 }
+
+.blog_blockquote_quote_no_style {
+	font-style: normal;
+}
+
 
 /*.blog_blockquote_quote::before {
 	display: block;
@@ -884,6 +907,13 @@ input[name="message"] {
 
 .blog_blockquote_author {
 	margin: 0;
+
+	font-family: "Montserrat", sans-serif;
+	color:  #1e1e1e;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
 }
 
 .blog_main_section .button {
