@@ -196,6 +196,31 @@ a.button:hover {
 	background-color: #ffd96d;
 }
 
+.hero_image {
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+
+	background-position: center;
+	background-size: cover;
+}
+
+/* .hero_image_1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0; 
+}
+
+.hero_image_2 {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	bottom: 0;
+	right: 0; 
+} */
+
 /* <header> *******************************/
 header {
 	position: relative;
