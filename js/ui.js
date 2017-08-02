@@ -11,7 +11,7 @@ $(function() {
         slideDuration: 5000,
         autoDuration: 500,
     });
-    hero.slideToLeft().then((obj) => obj.slideToRight());
+    hero.slideToLeft().slideToRight().slideToLeft();
 
 
 });
@@ -42,44 +42,63 @@ class Hero {
         if (this.$hero.css('position') === 'static') {
             this.$hero.css('position', 'relative');
         }
+
+        this.animationDone = true;
+        this.animationPromise = Promise.resolve();
+        console.log(this.animationPromise);
     }
 
     slideToLeft() {
-        return new Promise((resolve, reject) => {
-            this.$rightImage.css('background-image', `url('images/blog/blog-header-bg.png')`);
-            // this.$leftImage.css('background-image', `url('images/work/project-hero.jpg')`);
-            this.$leftImage.animate({right: '100%'}, {duration: this.slideDuration, queue: false});
-            this.$rightImage.animate({left: '0%'}, {
-                duration: this.slideDuration, 
-                queue: false,
-                complete: () => {
-                    console.log("slidetoleft");
-                    resolve(this);
-                }
-            });  
-        });
-    }
+        const self = this;
+        this.animationPromise = this.animationPromise.then(
+        () => {
+            return new Promise((resolve, reject) => {
 
-    slideToRight() {
-        return new Promise((resolve, reject) => {
-            // this.$rightImage.css('background-image', `url('images/blog/blog-header-bg.png')`);
-            this.$leftImage.css('background-image', `url('images/work/project-hero.jpg')`);
-            this.$leftImage.animate({right: '0%'}, {duration: this.slideDuration, queue: false});
-            this.$rightImage.animate({left: '100%'}, {
-                duration: this.slideDuration, 
-                queue: false,
-                complete: () => {
-                    console.log("slidetoright");
-                    resolve(this);
-                }
+                this.$rightImage.css('background-image', `url('images/blog/blog-header-bg.png')`);
+                // this.$leftImage.css('background-image', `url('images/work/project-hero.jpg')`);
+                this.animationDone = false;
+                this.$leftImage.animate({right: '100%'}, {duration: this.slideDuration, queue: false});
+                this.$rightImage.animate({left: '0%'}, {
+                    duration: this.slideDuration, 
+                    queue: false,
+                    complete: () => {
+                        console.log("slidetoleft");
+                        this.animationDone = true;
+                        resolve();
+                    }
+                });
+            
             });
 
         });
+
+        return this;
+    }
+
+    slideToRight() {
+        const self = this;
+        this.animationPromise = this.animationPromise.then(
+        () => {
+            return new Promise((resolve, reject) => {
+
+                this.animationDone = false;
+                this.$leftImage.css('background-image', `url('images/work/project-hero.jpg')`);
+                this.$leftImage.animate({right: '0%'}, {duration: this.slideDuration, queue: false});
+                this.$rightImage.animate({left: '100%'}, {
+                    duration: this.slideDuration, 
+                    queue: false,
+                    complete: () => {
+                        console.log("slidetoright");
+                        this.animationDone = true;
+                        resolve(this);
+                    }
+                });
+            
+            });
+
+        });
+
+        return this;
     }
 
 }
-
-
-// $nav_hero.animate({
-//     filter: 'brightness(0)',
-// },1000, () => console.log("finished"));
