@@ -1,68 +1,113 @@
 const $nav_prev = $('.prev_header_hero_block');
 const $nav_next = $('.next_header_hero_block');
 const $nav_hero = $('.hero_image');
-const $nav_hero_image_1 = $('.hero_image_1');
-const $nav_hero_image_2 = $('.hero_image_2');
+
+const images = ['images/homes/hero.png','images/blog/blog-header-bg.png', 'images/work/project-hero.jpg'];
 
 $(function() {
 
     let hero = new Hero({
         $hero: $nav_hero,
-        slideDuration: 5000,
-        autoDuration: 500,
+        $prev_nav: $nav_prev,
+        $next_nav: $nav_next,
+        slideDuration: 2000,
+        autoAnimation: 'slideToLeft',
+        autoDuration: 6000,
+        images: images,
     });
-    hero.slideToLeft().slideToRight().slideToLeft();
-
-
 });
 
 class Hero {
     //accepts $hero, $prev_nav, $next_nav, slideDuration, autoDuration
     constructor(obj) {
         $.extend(this, obj);
-        const leftImageCSS = {
+
+        this.leftImageCSS = {
             position: 'absolute',
             top: 0,
             left: 0,
             bottom: 0,
             right: 0, 
         };
-        const rightImageCSS = {
+        this.leftImageResetCSS = {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: '100%', 
+        }
+        this.rightImageCSS = {
             position: 'absolute',
             top: 0,
             left: '100%',
             bottom: 0,
             right: 0, 
         };
-        this.$leftImage = $('<div>').css(leftImageCSS);
-        this.$rightImage = $('<div>').css(rightImageCSS);
+
+        this.imageIndexCounter = new LoopCounter(0, this.images.length - 1);
+
+        //allow asynchronous operation of animations and chainability
+        this.animationPromise = Promise.resolve();
+        
+        this.$leftImage = $('<div>').css(this.leftImageCSS);
+        this.$rightImage = $('<div>').css(this.rightImageCSS);
 
         this.$hero.append(this.$leftImage, this.$rightImage);
         
+        //ensure parent hero is positioned
         if (this.$hero.css('position') === 'static') {
             this.$hero.css('position', 'relative');
         }
 
-        this.animationDone = true;
-        this.animationPromise = Promise.resolve();
-        console.log(this.animationPromise);
+        //Setup automated animation
+        if (!("autoDuration" in this) || this.autoDuration === 0) {
+            this.timedAnimateActive = false;
+            this.autoDuration = 0;
+        } else {
+            this.timedAnimateActive = true;
+            this.timedAnimate(this[this.autoAnimation || 'slideToLeft']);
+        }
+        
+        //Setup clickable next and previous navigations
+        if(("$next_nav" in this) && ("$prev_nav" in this)) {
+            this.$next_nav.on('click', this.slideToLeft.bind(this));
+            this.$prev_nav.on('click', this.slideToRight.bind(this));
+        }
+
+    }
+
+    timedAnimate(animation) {
+        setTimeout(() => {
+            if (this.timedAnimateActive) {
+                animation.call(this);
+                this.timedAnimate(animation);
+            }
+        },this.autoDuration);
     }
 
     slideToLeft() {
-        const self = this;
         this.animationPromise = this.animationPromise.then(
         () => {
             return new Promise((resolve, reject) => {
+                if (this.$leftImage.width() < this.$rightImage.width()) {
+                    this.$leftImage.css(this.rightImageCSS);
+                    this.swapLeftRightImageProperties();
+                }
 
-                this.$rightImage.css('background-image', `url('images/blog/blog-header-bg.png')`);
-                // this.$leftImage.css('background-image', `url('images/work/project-hero.jpg')`);
-                this.animationDone = false;
+                this.imageIndexCounter.increment();
+                this.$rightImage.css('background-image', `url('${this.images[this.imageIndexCounter.index]}')`);
+                
                 this.$leftImage.animate({right: '100%'}, {duration: this.slideDuration, queue: false});
                 this.$rightImage.animate({left: '0%'}, {
                     duration: this.slideDuration, 
                     queue: false,
                     complete: () => {
-                        console.log("slidetoleft");
+                        //switch the two images and reuse the former leftImage as the new rightImage
+                        const $tempImage = this.$leftImage;
+                        this.$leftImage = this.$rightImage;
+                        this.$rightImage = $tempImage;
+                        this.$rightImage.css(this.rightImageCSS);
+
                         this.animationDone = true;
                         resolve();
                     }
@@ -76,19 +121,24 @@ class Hero {
     }
 
     slideToRight() {
-        const self = this;
         this.animationPromise = this.animationPromise.then(
         () => {
             return new Promise((resolve, reject) => {
+                if (this.$leftImage.width() > this.$rightImage.width()) {
+                    this.$rightImage.css(this.leftImageResetCSS);
+                    this.swapLeftRightImageProperties();
+                    
+                    
+                }
 
-                this.animationDone = false;
-                this.$leftImage.css('background-image', `url('images/work/project-hero.jpg')`);
+                this.imageIndexCounter.decrement();
+                this.$leftImage.css('background-image', `url('${this.images[this.imageIndexCounter.index]}')`);
+                
                 this.$leftImage.animate({right: '0%'}, {duration: this.slideDuration, queue: false});
                 this.$rightImage.animate({left: '100%'}, {
                     duration: this.slideDuration, 
                     queue: false,
                     complete: () => {
-                        console.log("slidetoright");
                         this.animationDone = true;
                         resolve(this);
                     }
@@ -101,4 +151,36 @@ class Hero {
         return this;
     }
 
+    swapLeftRightImageProperties() {
+        const $tempImage = this.$rightImage;
+        this.$rightImage = this.$leftImage;
+        this.$leftImage = $tempImage;
+    }
+}
+
+
+class LoopCounter {
+    constructor(start, end) {
+        this.start = start;
+        this.end = end;
+
+        this.index = start;
+    }
+
+    increment() {
+        this.index++;
+        if (this.index > this.end) {
+            this.index = this.start;
+        }
+        return this.index;
+    }
+
+    decrement() {
+        this.index--;
+        if (this.index < this.start) {
+            this.index = this.end;
+        }
+
+        return this.index;
+    }
 }
